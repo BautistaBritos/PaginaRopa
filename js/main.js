@@ -1,63 +1,84 @@
-const teclados = [
-    {id: 1, objeto: "redragon kumara K552", precio: 5000},
-    {id: 2, objeto: "redragon yama", precio: 7000},
-    {id: 3, objeto: "redragon mitra", precio: 6000},
-    {id: 4, objeto: "hyperX alloy", precio: 8000},
-    {id: 5, objeto: "hyperX TKL", precio: 10000},
-];
-
-const mouses = [
-    {id: 6, objeto: "redragon M719", precio: 4000},
-    {id: 7, objeto: "redragon M998", precio: 7000},
-];
-
-const carro = [];
-
 const productos = [
-    {name: "teclados", productos: teclados},
-    {name: "mouses", productos: mouses},
+    {id: 1, objeto: "Redragon TKL 60%", precio: 50000, img: "./images/teclado tkl 60%.jpg"},
+    {id: 2, objeto: "Intel Core I9", precio: 70000, img: "./images/core i9.jpg"},
+    {id: 3, objeto: "Intel Core I3", precio: 35000, img: "./images/core i3.jpg"},
+    {id: 4, objeto: "Radeon RX550", precio: 60000, img: "./images/rx550.jpg"},
+    {id: 5, objeto: "ASUS RTX 2060", precio: 100000, img: "./images/placa de video asus rtx 2060.jpg"},
+    {id: 6, objeto: "Intel Core I7", precio: 80000, img: "./images/core i7.jpg"},
+    {id: 7, objeto: "Ryzen 5 3400", precio: 40000, img: "./images/ryzen.jpeg"},
+    {id: 8, objeto: "HyperX Alloys", precio: 6000, img: "./images/tecaldohyperex.png"},
 ];
 
-let init = parseInt(prompt("Bienvenidos a VentasGamers. Para comprar precione 1, si desea retirarse precione cualquier otro caracter"))
+const contenedor = document.querySelector("#carroMostrar")
 
-if(init == 1){
-    while (true) {
-        let inicio = parseInt(prompt("Bienvenidos a VentasGamers. Que desea llevar?" + " \n1- Teclados \n 2- Mouses \n 0- Salir de la compra"))
+const carrito = []
 
-        if(inicio === 0){
-            break;
-        }
+const btnComprar = document.querySelectorAll(".btnComprar")
 
-        if (inicio < 0){
-            alert("El numero que ingresaste es menor a 0")
-        }else if(!isNaN(inicio)){
-            let categoria = productos[inicio - 1]
+btnComprar.forEach((button, index) => {
+    button.addEventListener("click", () => {
+        agregarCarrito(index);
+    })
+})
 
-            if (categoria) {
-                let lista= " "
-                categoria.productos.forEach((elemento, index) => {
-                    const recorrido = index + 1;
-                    lista += recorrido + ". " + elemento.objeto + " $" + elemento.precio + "\n"
-                })
-
-                let opciones = parseInt(prompt("Seleccione el numero del producto que desee agregar a su carro." + "\n" + lista))
-
-                if(opciones >= 1 && opciones <= categoria.productos.length){
-                    carro.push(categoria.productos[opciones - 1])
-                }else{
-                    alert("Usted selecciono una opcion invalida.")
-                }
-            }else{
-                alert("Categoria no valida.")
-            }
-        }else{
-            alert("Solo puede seleccionar entre el 1 y el 2.")
-        }
-
-    
-    }
-}else{
-    alert("Gracias por su atencion.")
+function agregarCarrito(index){
+    event.preventDefault()
+    const objeto = productos[index]
+    objeto.precio = parseFloat(objeto.precio);
+    carrito.push(objeto)
+    localStorage.setItem("carrito", JSON.stringify(carrito))
+    mostrarCarro()
 }
 
-alert("usted ha comprado" + carro) 
+const carritoMostrar = document.getElementById("carroMostrar")
+
+function mostrarCarro(){
+    carritoMostrar.innerHTML = "";
+    let total = 0;
+
+    carrito.forEach((objeto) => {
+        const precioMostrado = parseFloat(objeto.precio)
+        total += precioMostrado
+
+        const objetoDiv = document.createElement("div")
+        objetoDiv.className = "objetoooo"
+        objetoDiv.innerHTML = `
+
+            <img src="${objeto.img}" alt"${objeto.nombre}">
+            <p>${objeto.objeto}</p>
+            <p>Precio $${precioMostrado}</p>
+        `
+        carritoMostrar.appendChild(objetoDiv)
+    })
+
+    carritoMostrar.innerHTML += `<p class="totall">Total: $${total}</p>`
+
+    const btnPago = document.createElement("div")
+    btnPago.className = "botonPagar"
+    btnPago.innerHTML = `
+        <button onClick="redirigir()">Comprar</button>
+    `
+
+    carritoMostrar.appendChild(btnPago)
+}
+
+function redirigir(){
+    return window.location.href="./pages/pagar.html"
+}
+
+const btnCompraFinalizar = document.querySelector("#btnCompraFinalizar")
+const ImputsPagoo = document.querySelectorAll(".imputsPago")
+
+btnCompraFinalizar.addEventListener("click", () => {
+    validarCompra(ImputsPagoo)
+})
+
+function validarCompra(el){
+    if(el.value == ""){
+        alert("mal")
+    }else{
+        alert("Compra realizada con exito.")
+        localStorage.clear(carrito)
+    }
+}
+

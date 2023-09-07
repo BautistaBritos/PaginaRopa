@@ -1,0 +1,117 @@
+#cabeza{
+    background-color: burlywood;
+    height: 200px;
+}
+
+.titulo{
+    text-align: center;
+    padding-top: 55px;
+}
+
+.tituloSec{
+    padding-top: 70px;
+    padding-left: 50px;
+}
+
+.container {
+    padding: 2px 16px;
+}
+
+.card{
+    display: inline-block;
+}
+
+.card1{
+    width: 320px;
+    height: 420px;
+    border: 1px black solid;
+    display: inline-block;
+    margin-left: 40px;
+    margin-right: 50px;
+}
+
+.imagen1{
+    width: 300px;
+    height: 300px;
+}
+
+.carta2{
+    margin-right: 50px;
+}
+
+.btnComprar{
+    background-color: #cbbe73;
+    width: 100px;
+    height: 35px;
+    border-radius: 18%;
+    margin-left:100px;
+}
+
+.objetoooo{
+    display: inline-block;
+    margin: 20px;
+    img{
+        width: 60px;
+        height: 60px;
+    }
+    p{
+        font-size: 17px;
+    }
+}
+
+#carroMostradoo{
+    margin-top: 60px;
+    margin-left: 50px;
+    margin-bottom: 40px;
+    h3{
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 40px;
+        text-decoration:underline;
+        font-weight: 300;
+    }
+}
+
+.botonPagar{
+    margin-bottom: 70px;
+    button{
+        background-color: #cbbe73;
+        width: 100px;
+        height: 35px;
+        border-radius: 18%;
+    }
+}
+
+#contenerTarjetaC{
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 300px;
+    div{
+        margin: 20px 0;
+    }
+}
+
+.linea{
+    margin-right: 1290px;
+}
+
+.btnCompraFinalizar{
+    background-color: #cbbe73;
+    width: 100px;
+    height: 35px;
+    border-radius: 18%;
+}
+
+#footerr{
+    background-color: burlywood;
+    height: 170px;
+}
+
+.totall{
+    font-size: 17px;
+    border: 1px solid black;
+    width: 130px;
+}
+
+.carta5{
+    margin-top: 45px;
+}
