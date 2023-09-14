@@ -17,6 +17,10 @@
   padding: 2px 16px;
 }
 
+#cuerpoIndex {
+  background-color: #FCD7B0;
+}
+
 .card {
   display: inline-block;
 }
@@ -28,15 +32,12 @@
   display: inline-block;
   margin-left: 40px;
   margin-right: 50px;
+  margin-top: 25px;
 }
 
 .imagen1 {
   width: 300px;
   height: 300px;
-}
-
-.carta2 {
-  margin-right: 50px;
 }
 
 .btnComprar {
@@ -112,8 +113,87 @@
   width: 130px;
 }
 
-.carta5 {
-  margin-top: 45px;
+.iconoPage {
+  height: 200px;
+  width: auto;
+  margin-left: 750px;
+  margin-top: 0px;
+  display: inline-block;
+}
+
+#cabeza2 {
+  height: 270px;
+  background-color: burlywood;
+}
+
+.incioSesionF {
+  margin-left: 750px;
+}
+
+.imputUser {
+  display: block;
+}
+
+.imputContra {
+  display: block;
+}
+
+#parr {
+  height: 30px;
+}
+
+.imputUser {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.imputContra {
+  margin-bottom: 10px;
+  font-size: 18px;
+  margin-top: 7px;
+}
+
+.btninico {
+  margin-top: 15px;
+  margin-left: 60px;
+  border-radius: 15%;
+}
+
+#btnRegistrar {
+  margin-top: 10px;
+}
+
+.h2index {
+  text-align: center;
+}
+
+#containerPagar button {
+  border-radius: 15%;
+  background-color: #cbbe73;
+}
+
+.objPa {
+  display: inline-block;
+}
+.objPa img {
+  width: 60px;
+  height: 60px;
+  margin-left: 20px;
+}
+.objPa p {
+  font-size: 17px;
+  margin-right: 40px;
+}
+
+#btnCompraFinalizar {
+  border-radius: 15%;
+  background-color: #cbbe73;
+}
+
+.totales {
+  border-radius: 15%;
+  background-color: #cbbe73;
+  font-weight: 500;
 }
 
 /*# sourceMappingURL=estilos.css.map */

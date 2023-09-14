@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VentasGamer</title>
 
-    <link rel="" href="images/core i3.jpg" type="image/x-icon">
+    <link rel="" href="images/iconoo.png" type="image/x-icon">
 
     <!-- Google Fonts -->
 
@@ -14,122 +14,36 @@
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 
-<body>
-    <header id="cabeza">
+<body id="cuerpoIndex">
+    <header id="cabeza2">
         <h1 class="titulo">VentasGamer</h1>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary barraNav">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">Inicio</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                  </ul>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                </li>
-              </ul>
-              <form class="d-flex" role="search">
-                <input class="form-control me-2 buscador" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success mandar" type="submit">Buscar</button>
-              </form>
-            </div>
-          </div>
-        </nav>
     </header>
 
-    <main>
-        <h2 class="tituloSec">Nuestros Productos</h1>
-        <hr>
-        
-        <div id="cartas row">
-            <div class="card1">
-              <img src="images/teclado tkl 60%.jpg" alt="" class="imagen1">
-              <h3>Redragon TKL 60%</h3>
-              <p>$50000</p>
-              <button class="btnComprar btnComprar1">Comprar</button>
+    <div class="row">
+        <section>
+            <img src="images/iconoo.png" alt="" class="iconoPage">
+            <h2 class="h2index">Inicio de sesion</h2>
+        </section>    
+
+      <form action="" class="incioSesionF" id="formLogin">
+            <div>
+                <label for="" class="imputUser">Nombre</label>
+                <input type="text" placeholder="Nombre" value=""  id="usuarioLogin">
             </div>
-
-            <div class="card1 carta2">
-              <img src="images/core i9.jpg" alt="" class="imagen1">
-              <h3>intel Core I9</h3>
-              <p>$70000</p>
-              <button class="btnComprar btnComprar2">Comprar</button>
+            <div>
+                <label for="" class="imputContra">Contrasena</label>
+                <input type="text" placeholder="Contrasena" value=""  id="contraseñaLogin">
             </div>
-
-            <div class="card1 carta3">
-              <img src="images/core i3.jpg" alt="" class="imagen1">
-              <h3>Intel Core I3</h3>
-              <p>$35000</p>
-              <button class="btnComprar btnComprar3">Comprar</button>
+            <div>
+                <button class="btninico">Iniciar</button>
             </div>
+            <p id="parr"></p>
 
-            <div class="card1 carta4">
-              <img src="images/rx550.jpg" alt="" class="imagen1">
-              <h3>Radeon RX550</h3>
-              <p>$60000</p>
-              <button class="btnComprar btnComprar4">Comprar</button>
-            </div>
+            <label for="" class="yaTienesCuenta"> No tienes una cuenta?</label>
+            <a href="pages/register.html" class="registrateAqui">Registrate Aqui</a>
+        </form>
 
-            <div class="card1 carta5">
-              <img src="images/placa de video asus rtx 2060.jpg" alt="" class="imagen1">
-              <h3>ASUS RTX 2060</h3>
-              <p>$100000</p>
-              <button class="btnComprar btnComprar5">Comprar</button>
-            </div>
-
-            <div class="card1 carta5">
-              <img src="images/core i7.jpg" alt="" class="imagen1">
-              <h3>intel Core I7</h3>
-              <p>$80000</p>
-              <button class="btnComprar btnComprar5">Comprar</button>
-            </div>
-
-            <div class="card1 carta5">
-              <img src="images/ryzen.jpeg" alt="" class="imagen1">
-              <h3>Ryzen 5 3400</h3>
-              <p>$40000</p>
-              <button class="btnComprar btnComprar5">Comprar</button>
-            </div>
-
-            <div class="card1 carta5">
-              <img src="images/tecaldohyperex.png" alt="" class="imagen1">
-              <h3>HyperX Alloys</h3>
-              <p>$6000</p>
-              <button class="btnComprar btnComprar5">Comprar</button>
-            </div>
-        </div>
-
-        <div id="carroMostradoo">
-          <h3>Carrito</h3>
-        </div>
-
-        <div id="carroMostrar">
-          
-        </div>
-    </main>
-
-    <footer id="footerr">
-      <h5>Seguinos en nuestras redes sociales</h5>
-      <h6>Gracias por su atencion</h6>
-    </footer>
+    </div>
 
 
 
@@ -137,5 +51,6 @@
     <!-- Scripts -->
     <script src="js/bootstrap.min.js"></script>
     <script src="./js/main.js"></script>
+    <script src="./js/login.js"></script>
 </body>
 </html>

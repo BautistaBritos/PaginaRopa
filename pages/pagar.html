@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VentasGamers | Carrito de Compras</title>
 
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="" href="" type="image/x-icon">
 
     <!-- Google Fonts -->
 
@@ -18,7 +18,7 @@
         <h1 class="titulo">VentasGamer</h1>
         <nav class="navbar navbar-expand-lg bg-body-tertiary barraNav">
             <div class="container-fluid">
-              <a class="navbar-brand" href="../index.html">Inicio</a>
+              <a class="navbar-brand" href="../pages/paginaPrincipal.html">Inicio</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -54,30 +54,37 @@
           </nav>
     </header>
 
-    <div id="contenerTarjetaC">
+    <div id="contenerTarjetaC" class="row">
         <h3>Finalice su Compra</h3>
         <hr class="linea">
-        <form action="">
+        <form action="" class="formularioTajeta col-md-6">
             <div>
                 <label for="">Nombre del Titular</label>
-                <input type="text" placeholder="Introduzca su Nombre" class="imputsPago" value="">
+                <input type="text" placeholder="Introduzca su Nombre" class="imputsPago0" value="" required>
             </div>
             <div>
                 <label for="">Numero de la Tarjeta</label>
-                <input type="text" placeholder="0000 0000 0000 0000" class="imputsPago" value="">
+                <input type="text" placeholder="0000 0000 0000 0000" class="imputsPago" value="" required>
             </div>
             <div>
                 <label for="">Codigo de seguridad</label>
-                <input type="text" placeholder="cvv" class="imputsPago" value="">
+                <input type="text" placeholder="cvv" class="imputsPago1" value="" required>
             </div>
             <div>
                 <label for="">Fecha de Vencimiento</label>
-                <input type="text" placeholder="00/00/00" class="imputsPago" value="">
+                <input type="text" placeholder="00/00/00" class="imputsPago2" value="" required>
             </div>
             <div>
                 <button id="btnCompraFinalizar">Comprar</button>
             </div>
+            <div class="conteiner">
+
+            </div>
         </form>
+
+        <section id="containerPagar" class="col-md-6">
+          <button id="btnMostrarPagar">Mostrar carrito</button>
+        </section>
     </div>
 
     <footer id="footerr">
@@ -85,8 +92,10 @@
         <h6>Gracias por su atencion</h6>
     </footer>
     
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Scripts -->
     <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/main.js"></script>
+    <script src="../js/pago.js"></script>
 </body>
 </html>
