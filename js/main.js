@@ -1,5 +1,5 @@
 const productos = [
-    {id: 1, objeto: "Redragon TKL 60%", precio: 50000, img: "../images/teclado tkl 60%.jpg"},
+    {id: 1, objeto: "Redragon TKL 60%", precio: 50000, img: "../images/funca pls.jpg"},
     {id: 2, objeto: "Intel Core I9", precio: 70000, img: "../images/core i9.jpg"},
     {id: 3, objeto: "Intel Core I3", precio: 35000, img: "../images/core i3.jpg"},
     {id: 4, objeto: "Radeon RX550", precio: 60000, img: "../images/rx550.jpg"},
@@ -8,12 +8,6 @@ const productos = [
     {id: 7, objeto: "Ryzen 5 3400", precio: 40000, img: "../images/ryzen.jpeg"},
     {id: 8, objeto: "HyperX Alloys", precio: 6000, img: "../images/tecaldohyperex.png"},
 ];  
-
-fetch("./data.data.json")
-.then(response=>response.json())
-.then(datos=>{
-    console.log(datos)
-})
 
 //Logica pintar html y btn comprar
 const cartasP = document.querySelector("#cartas")
