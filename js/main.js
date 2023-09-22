@@ -9,12 +9,19 @@ const productos = [
     {id: 8, objeto: "HyperX Alloys", precio: 6000, img: "../images/tecaldohyperex.png"},
 ];  
 
+fetch("./data.data.json")
+.then(response=>response.json())
+.then(datos=>{
+    console.log(datos)
+})
+
+//Logica pintar html y btn comprar
 const cartasP = document.querySelector("#cartas")
 
 function pintarHtml(arr){
-    cartasP.innerHTML = "";
+    cartasP.innerHTML ="";
 
-    let html1 = "";
+    let html1 ="";
     for (const item of arr){
         html1 = `<div class="card1">
             <img src="${item.img}" alt="" class="imagen1">
@@ -55,8 +62,10 @@ function agregarCarrito(index){
 }
 
 const carritoMostrar = document.getElementById("carroMostrar")
+const carrooo = localStorage.getItem("carrito")
 
-mostrarCarro()
+//Muestro carro + funcion
+mostrarCarro(carrooo)
 
 function mostrarCarro(){
     let carro = JSON.parse(localStorage.getItem("carrito"))
@@ -78,7 +87,6 @@ function mostrarCarro(){
             <img src="${objeto.img}" alt"${objeto.nombre}">
             <p>${objeto.objeto}</p>
             <p>Precio: $${precioMostrado}</p>
-            <button onClick="borrarObejto(objeto)">Borrar</button>
         `
         carritoMostrar.appendChild(objetoDiv)
     })
@@ -89,6 +97,7 @@ function mostrarCarro(){
     btnPago.className = "botonPagar"
     btnPago.innerHTML = `
         <button onClick="redirigir()">Comprar</button>
+        <button onClick="limpiarCarro()">Limpiar carrito</button>
     `
 
     carritoMostrar.appendChild(btnPago)
@@ -99,6 +108,11 @@ function redirigir(){
     return window.location.href="pagar.html"
 }
 
+//limpiar carro
 
-
+function limpiarCarro(){
+    localStorage.removeItem("carrito")
+    carritoMostrar.innerHTML=""
+    window.location.href="paginaPrincipal.html"
+}
 

@@ -1,11 +1,12 @@
 //Logica pagina pagar
-
+const nombreTarjeta = document.querySelector(".imputsPago0")
 const btnCompraFinalizar = document.querySelector("#btnCompraFinalizar")
 const ImputsPagoo = document.querySelector(".imputsPago")
 const conteiner = document.querySelector(".conteiner")
 const formularioTajeta = document.querySelector(".formularioTajeta")
 const imputsPago1 = document.querySelector(".imputsPago1")
 const imputsPago2 = document.querySelector(".imputsPago2")
+const carritoLS = localStorage.getItem("carrito")
 
 formularioTajeta.addEventListener("submit", (e)=>{
     e.preventDefault()
@@ -13,13 +14,22 @@ formularioTajeta.addEventListener("submit", (e)=>{
     formularioTajeta.reset()
 })
 
+//Validacion
 function validar(){
     if(isNaN(ImputsPagoo.value)){
         conteiner.innerHTML="Complete con los datos correspondientes por favor."
     }else if (isNaN(imputsPago1.value)){
         conteiner.innerHTML="Complete con los datos correspondientes por favor."
+    }else if (! isNaN(nombreTarjeta.value)){
+        conteiner.innerHTML="No puede poner numeros en el nombre."
     }else if (isNaN(imputsPago2.value)){
         conteiner.innerHTML="Complete con los datos correspondientes por favor."
+    }else if(ImputsPagoo.value.length <= 15 || ImputsPagoo.value.length > 16){
+        conteiner.innerHTML="La tarjeta debe tener 16 numeros."
+    }else if(imputsPago1.value.length <= 2 || imputsPago1.value.length >= 4){
+        conteiner.innerHTML="El codigo de seguridad debe contar con 3 numeros."
+    }else if(imputsPago2.value.length <= 7 || imputsPago2.value.length >= 9){
+        conteiner.innerHTML="Introduzca la fecha de vencimiento como muestra en la pantalla."
     }else{
         Swal.fire({
             title: 'Estas seguro que deseas confirmar la compra?',
@@ -36,6 +46,8 @@ function validar(){
                 'Gracias por contar con nosotros.',
                 'success'
               )
+              localStorage.removeItem("carrito")
+              containerPagar.innerHTML=""
             }
           })
     }    
@@ -44,7 +56,9 @@ function validar(){
 const btnMostrarPagar = document.querySelector("#btnMostrarPagar")
 const containerPagar = document.querySelector("#containerPagar")
 
-btnMostrarPagar.addEventListener("click", ()=>{
+//Mostrar carro caundo se paga
+btnMostrarPagar.addEventListener("click", (e)=>{
+    e.preventDefault()
     mostrarCarro2()
 })
 
@@ -66,7 +80,7 @@ function mostrarCarro2(){
         objetoDiv.innerHTML = `
 
             <img src="${objeto.img}" alt"${objeto.nombre}">
-            <p>$${objeto.objeto}</p>
+            <p>${objeto.objeto}</p>
             <p>Precio $${precioMostrado}</p>
         `
         containerPagar.appendChild(objetoDiv)

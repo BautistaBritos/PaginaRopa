@@ -77,7 +77,8 @@
     button{
         background-color: #cbbe73;
         width: 100px;
-        height: 35px;
+        height: 48px;
+        width: auto;
         border-radius: 18%;
     }
 }
@@ -193,6 +194,12 @@
 }
 
 .totales{
+    border-radius: 15%;
+    background-color: #cbbe73;
+    font-weight: 500;
+}
+
+#btnMostrarPagar{
     border-radius: 15%;
     background-color: #cbbe73;
     font-weight: 500;

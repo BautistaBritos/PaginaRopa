@@ -9,11 +9,7 @@ function inicioSesion(usuarios){
     let userFound = usuarios.find((usuario) => {
         return usuario.nombre == usuarioLogin.value && usuario.pass == passLogin.value
     })
-    if(userFound){
-        window.location.href="pages/paginaPrincipal.html"
-    }else{
-        parr.innerHTML="Usuario no encontrado"
-    }
+    userFound ? window.location.href="pages/paginaPrincipal.html" : parr.innerHTML="Usuario no encontrado"
 }
 
 function recuperarLS(){
